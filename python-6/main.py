@@ -34,7 +34,6 @@ class Employee(metaclass=abc.ABCMeta):
     def calc_bonus(self):
         pass
 
-    @abc.abstractmethod
     def get_hours(self):
         return self.__WORK_HOUR
 
@@ -53,9 +52,6 @@ class Manager(Employee):
     def calc_bonus(self):
         return self.salary * 0.15
 
-    def get_hours(self):
-        return super().get_hours()
-
 
 class Seller(Employee):
 
@@ -71,7 +67,3 @@ class Seller(Employee):
 
     def put_sales(self, sales):
         self.__sales += sales
-
-    def get_hours(self):
-        return super().get_hours()
-
