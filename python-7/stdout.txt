@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.2, pytest-3.6.2, py-1.5.3, pluggy-0.6.0 -- /home/neto/.pyenv/versions/python-7/bin/python
+cachedir: .pytest_cache
+rootdir: /home/neto/codenation/python-7, inifile:
+collecting ... collected 8 items
+
+test_main.py::test_api_online PASSED                                     [ 12%]
+test_main.py::test_api_offline PASSED                                    [ 25%]
+test_main.py::test_calculate_temperature[62-16] PASSED                   [ 37%]
+test_main.py::test_calculate_temperature[107-41] PASSED                  [ 50%]
+test_main.py::test_calculate_temperature[32-0] PASSED                    [ 62%]
+test_main.py::test_get_temperature_lat_lng[-14.235004--51.92528-67-19] PASSED [ 75%]
+test_main.py::test_get_temperature_lat_lng[-30.0277--51.2287-70-21] PASSED [ 87%]
+test_main.py::test_get_temperature_lat_lng[-30.0277--51.2287-33-0] PASSED [100%]
+
+-------- generated xml file: /home/neto/codenation/python-7/output.xml ---------
+=========================== 8 passed in 2.48 seconds ===========================
