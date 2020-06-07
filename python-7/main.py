@@ -1,12 +1,12 @@
 import requests
 
-_KEY = 'e1ee55658d4a2b28c4841e373c3b3d87'
-_URL = 'https://api.darksky.net/forecast/{}/{},{}'
+KEY = 'e1ee55658d4a2b28c4841e373c3b3d87'
+URL = 'https://api.darksky.net/forecast/{}/{},{}'
 
 
 def _api_on(lat, lng):
 
-    url = _URL.format(_KEY, lat, lng)
+    url = URL.format(KEY, lat, lng)
     try:
         resp = requests.head(url)
     except ConnectionError:
@@ -18,14 +18,9 @@ def _api_on(lat, lng):
 def request_api_temperature(lat, lng):
 
     if _api_on(lat, lng):
-        url = _URL.format(_KEY, lat, lng)
-        resp = requests.get(url)
-        data = resp.json()
-        resp = {
-            'currently': {
-                'temperature': data.get('currently').get('temperature')
-            }
-        }
+        url = URL.format(KEY, lat, lng)
+        data = requests.get(url)
+        resp = data.json()
 
     else:
         resp = {}

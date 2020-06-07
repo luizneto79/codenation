@@ -14,4 +14,4 @@ test_main.py::test_get_temperature_lat_lng[-30.0277--51.2287-70-21] PASSED [ 87%
 test_main.py::test_get_temperature_lat_lng[-30.0277--51.2287-33-0] PASSED [100%]
 
 -------- generated xml file: /home/neto/codenation/python-7/output.xml ---------
-=========================== 8 passed in 2.48 seconds ===========================
+========================== 8 passed in 10.10 seconds ===========================
