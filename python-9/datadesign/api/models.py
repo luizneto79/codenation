@@ -8,7 +8,7 @@ class Agent(models.Model):
     status = models.BooleanField('Status', default=True)
     env = models.CharField('Env', max_length=50)
     version = models.CharField('Versão', max_length=5)
-    address = models.GenericIPAddressField('Endereço IP')
+    address = models.GenericIPAddressField('Endereço IP', protocol='IPv4')
 
     class Meta:
         verbose_name_plural = 'Agentes'
@@ -49,7 +49,23 @@ class Group(models.Model):
 
 
 class Event(models.Model):
+
+    CRITICAL = 'CRITICAL'
+    DEBUG = 'DEBUG'
+    ERROR = 'ERROR'
+    WARNING = 'WARNING'
+    INFO = 'INFO'
+
+    LEVEL_CHOICES = (
+        (CRITICAL, CRITICAL),
+        (DEBUG, DEBUG),
+        (ERROR, ERROR),
+        (WARNING, WARNING),
+        (INFO, INFO),
+    )
+
     level = models.CharField('Nível', max_length=20,
+                             choices=LEVEL_CHOICES,
                              validators=[validate_level])
     data = models.TextField('Dados')
     arquivado = models.BooleanField('Arquivado', default=False)

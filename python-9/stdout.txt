@@ -12,4 +12,4 @@ test_submit.py::TestChallenge9::test_user PASSED                         [ 83%]
 test_submit.py::TestChallenge9::test_user_group PASSED                   [100%]
 
 -------- generated xml file: /home/neto/codenation/python-9/output.xml ---------
-=========================== 6 passed in 0.33 seconds ===========================
+=========================== 6 passed in 0.21 seconds ===========================
