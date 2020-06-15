@@ -1,14 +1,5 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
-from django.core.exceptions import ValidationError
-
-
-def validate_level(value):
-    levels = ('CRITICAL', 'DEBUG', 'ERROR', 'WARNING', 'INFO')
-
-    if value not in levels:
-        raise ValidationError('O valor não está entre as opções (CRITICAL, '
-                              'DEBUG, ERROR, WARNING, INFO)')
 
 
 class Agent(models.Model):
@@ -29,7 +20,7 @@ class Agent(models.Model):
 class User(models.Model):
 
     name = models.CharField('Nome', max_length=50)
-    last_login = models.DateTimeField('Ùltimo acesso', null=True, blank=True)
+    last_login = models.DateTimeField('Ùltimo acesso', auto_now=True)
     email = models.EmailField('E-mail')
     password = models.CharField(
         'Senha',
@@ -73,8 +64,7 @@ class Event(models.Model):
     )
 
     level = models.CharField('Nível', max_length=20,
-                             choices=LEVEL_CHOICES,
-                             validators=[validate_level])
+                             choices=LEVEL_CHOICES)
 
     data = models.TextField('Dados')
     arquivado = models.BooleanField('Arquivado', default=False)

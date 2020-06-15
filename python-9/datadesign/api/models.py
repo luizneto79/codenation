@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
-from datadesign.api.validators import validate_level
 
 
 class Agent(models.Model):
@@ -64,9 +63,7 @@ class Event(models.Model):
         (INFO, INFO),
     )
 
-    level = models.CharField('Nível', max_length=20,
-                             choices=LEVEL_CHOICES,
-                             validators=[validate_level])
+    level = models.CharField('Nível', max_length=20, choices=LEVEL_CHOICES)
     data = models.TextField('Dados')
     arquivado = models.BooleanField('Arquivado', default=False)
     date = models.DateField('Data', null=True, blank=True)
