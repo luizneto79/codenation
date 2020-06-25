@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 
 
 def get_active_users() -> User:
+    """Traga todos os usuários ativos, seu último login deve ser menor que
+    10 dias """
     return (User.objects.filter(
         last_login__gte=datetime.now()-timedelta(days=10)))
 
@@ -24,8 +26,7 @@ def get_all_debug_events() -> Event:
 
 def get_all_critical_events_by_user(agent) -> Event:
     """Traga todos os eventos do tipo critico de um usuário específico"""
-    return Event.objects.filter(level='critical',
-                                agent__user__id=agent.user_id)
+    return Event.objects.filter(level='critical', agent=agent)
 
 
 def get_all_agents_by_user(username) -> Agent:

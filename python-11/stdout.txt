@@ -13,4 +13,4 @@ test_submit.py::TestChallenge10::test_6 PASSED                           [ 85%]
 test_submit.py::TestChallenge10::test_7 PASSED                           [100%]
 
 -------- generated xml file: /home/neto/codenation/python-11/output.xml --------
-=========================== 7 passed in 0.35 seconds ===========================
+=========================== 7 passed in 0.36 seconds ===========================
