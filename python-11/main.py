@@ -6,7 +6,7 @@ def get_active_users() -> User:
     """Traga todos os usuários ativos, seu último login deve ser menor que
     10 dias """
     return (User.objects.filter(
-        last_login__gte=datetime.now()-timedelta(days=10)))
+        last_login__gt=datetime.now()-timedelta(days=10)))
 
 
 def get_amount_users() -> User:
